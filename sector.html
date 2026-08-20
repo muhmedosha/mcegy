@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Modern Construction - Government Projects Portfolio">
+
+    <title>Government Projects | Modern Construction</title>
+
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="sector.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container navbar-inner">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-text">
+                    MODERN
+                    <span>CONSTRUCTION</span>
+                </div>
+
+                <img
+                    src="assets/logo.png"
+                    alt="Modern Construction">
+
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html#home">
+                    الرئيسية
+                </a>
+
+                <a href="index.html#about">
+                    من نحن
+                </a>
+
+                <a href="index.html#projects">
+                    المشاريع
+                </a>
+
+                <a href="index.html#sectors">
+                    القطاعات
+                </a>
+
+                <a href="index.html#contact">
+                    تواصل معنا
+                </a>
+
+            </nav>
+
+            <button
+                class="language-btn"
+                type="button">
+                EN
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="sector-hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-line-bg"></div>
+
+        <div class="container hero-content">
+
+            <div class="hero-line"></div>
+
+            <p
+                class="hero-label"
+                data-ar="القطاع الحكومي"
+                data-en="GOVERNMENT SECTOR">
+
+                القطاع الحكومي
+
+            </p>
+
+            <h1
+                data-ar="المشروعات الحكومية"
+                data-en="Government Projects">
+
+                المشروعات الحكومية
+
+            </h1>
+
+            <p
+                class="hero-subtitle"
+                data-ar="مشروعات نفذتها Modern Construction في القطاع الحكومي"
+                data-en="Projects executed by Modern Construction within the government sector">
+
+                مشروعات نفذتها Modern Construction
+                في القطاع الحكومي
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <main class="projects-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p
+                        class="section-label"
+                        data-ar="PORTFOLIO"
+                        data-en="PORTFOLIO">
+
+                        PORTFOLIO
+
+                    </p>
+
+                    <h2
+                        data-ar="مشروعاتنا الحكومية"
+                        data-en="Our Government Projects">
+
+                        مشروعاتنا الحكومية
+
+                    </h2>
+
+                </div>
+
+                <div class="project-count">
+
+                    <strong>08</strong>
+
+                    <span
+                        data-ar="مشروعات"
+                        data-en="Projects">
+
+                        مشروعات
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="projectsContainer"
+                class="projects-grid">
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= IMAGE MODAL ================= -->
+
+    <div
+        id="imageModal"
+        class="image-modal"
+        aria-hidden="true">
+
+        <button
+            class="modal-close"
+            type="button"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+        <button
+            class="modal-prev"
+            type="button"
+            aria-label="Previous">
+
+            ‹
+
+        </button>
+
+        <div class="modal-content">
+
+            <div class="modal-image-wrapper">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="Project Image">
+
+            </div>
+
+            <div
+                id="modalCaption"
+                class="modal-caption">
+            </div>
+
+        </div>
+
+        <button
+            class="modal-next"
+            type="button"
+            aria-label="Next">
+
+            ›
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-logo">
+                MODERN <span>CONSTRUCTION</span>
+            </div>
+
+            <p>
+                © Modern Construction. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="sector.js"></script>
+
+</body>
+
+</html>
