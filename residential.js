@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/badya/1.jpg",
-                "assets/projects/residential/badya/2.jpg",
-                "assets/projects/residential/badya/3.jpg"
+                "assets2/projects/residential/badya/1.jpg",
+                "assets2/projects/residential/badya/2.jpg",
+                "assets2/projects/residential/badya/3.jpg"
             ]
         },
 
@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/la-fountaine/1.jpg",
-                "assets/projects/residential/la-fountaine/2.jpg",
-                "assets/projects/residential/la-fountaine/3.jpg"
+                "assets2/projects/residential/la-fountaine/1.jpg",
+                "assets2/projects/residential/la-fountaine/2.jpg",
+                "assets2/projects/residential/la-fountaine/3.jpg"
             ]
         },
 
@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/zed-towers-b/1.jpg",
-                "assets/projects/residential/zed-towers-b/2.jpg",
-                "assets/projects/residential/zed-towers-b/3.jpg"
+                "assets2/projects/residential/zed-towers-b/1.jpg",
+                "assets2/projects/residential/zed-towers-b/2.jpg",
+                "assets2/projects/residential/zed-towers-b/3.jpg"
             ]
         },
 
@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/uptown-cairo/1.jpg",
-                "assets/projects/residential/uptown-cairo/2.jpg",
-                "assets/projects/residential/uptown-cairo/3.jpg"
+                "assets2/projects/residential/uptown-cairo/1.jpg",
+                "assets2/projects/residential/uptown-cairo/2.jpg",
+                "assets2/projects/residential/uptown-cairo/3.jpg"
             ]
         },
 
@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/oriana-villas/1.jpg",
-                "assets/projects/residential/oriana-villas/2.jpg",
-                "assets/projects/residential/oriana-villas/3.jpg"
+                "assets2/projects/residential/oriana-villas/1.jpg",
+                "assets2/projects/residential/oriana-villas/2.jpg",
+                "assets2/projects/residential/oriana-villas/3.jpg"
             ]
         },
 
@@ -115,9 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Residential Project",
 
             images: [
-                "assets/projects/residential/swan-lake/1.jpg",
-                "assets/projects/residential/swan-lake/2.jpg",
-                "assets/projects/residential/swan-lake/3.jpg"
+                "assets2/projects/residential/swan-lake/1.jpg",
+                "assets2/projects/residential/swan-lake/2.jpg",
+                "assets2/projects/residential/swan-lake/3.jpg"
             ]
         }
 

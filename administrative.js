@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const langBtn = document.querySelector(".language-btn");
 
+
     const projects = [
 
         {
@@ -18,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Administrative Building",
 
             images: [
-    "assets/projects/administrative-banks/quesna/1.jpg",
-    "assets/projects/administrative-banks/quesna/2.jpg",
-    "assets/projects/administrative-banks/quesna/3.jpg",
-    "assets/projects/administrative-banks/quesna/4.jpg",
-    "assets/projects/administrative-banks/quesna/5.jpg",
-    "assets/projects/administrative-banks/quesna/6.jpg"
-]
+                "assets2/projects/administrative-banks/quesna/1.jpg",
+                "assets2/projects/administrative-banks/quesna/2.jpg",
+                "assets2/projects/administrative-banks/quesna/3.jpg",
+                "assets2/projects/administrative-banks/quesna/4.jpg",
+                "assets2/projects/administrative-banks/quesna/5.jpg",
+                "assets2/projects/administrative-banks/quesna/6.jpg"
+            ]
         },
 
 
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Bank Project",
 
             images: [
-                "assets/projects/administrative-banks/bank-audi/1.jpg",
-                "assets/projects/administrative-banks/bank-audi/2.jpg"
+                "assets2/projects/administrative-banks/bank-audi/1.jpg",
+                "assets2/projects/administrative-banks/bank-audi/2.jpg"
             ]
         },
 
@@ -58,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Bank Project",
 
             images: [
-                "assets/projects/administrative-banks/nbk-bank/1.jpg",
-                "assets/projects/administrative-banks/nbk-bank/2.jpg",
-                "assets/projects/administrative-banks/nbk-bank/3.jpg"
+                "assets2/projects/administrative-banks/nbk-bank/1.jpg",
+                "assets2/projects/administrative-banks/nbk-bank/2.jpg",
+                "assets2/projects/administrative-banks/nbk-bank/3.jpg"
             ]
         }
 

@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Commercial Project",
 
             images: [
-                "assets/projects/commercial/cairo-festival/1.jpg",
-                "assets/projects/commercial/cairo-festival/2.jpg",
-                "assets/projects/commercial/cairo-festival/3.jpg"
+                "assets2/projects/commercial/cairo-festival/1.jpg",
+                "assets2/projects/commercial/cairo-festival/2.jpg",
+                "assets2/projects/commercial/cairo-festival/3.jpg"
             ]
         }
 
@@ -55,6 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeImage = 0;
 
 
+    /* =========================================================
+       RENDER PROJECTS
+    ========================================================= */
+
     function renderProjects() {
 
         if (!container) return;
@@ -85,7 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const card =
                 document.createElement("article");
 
-            card.className = "project-card";
+
+            card.className =
+                "project-card";
 
 
             card.innerHTML = `
@@ -126,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 src="${image}"
                                 alt="${title}"
                                 loading="lazy"
+                                decoding="async"
                             >
 
                         </div>
@@ -157,6 +164,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       OPEN MODAL
+    ========================================================= */
+
     function openModal(
         projectIndex,
         imageIndex
@@ -179,10 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
             "false"
         );
 
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow =
+            "hidden";
 
     }
 
+
+    /* =========================================================
+       UPDATE MODAL
+    ========================================================= */
 
     function updateModal() {
 
@@ -224,6 +240,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       CLOSE MODAL
+    ========================================================= */
+
     function closeModal() {
 
         if (!modal) return;
@@ -249,6 +269,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =========================================================
+       NEXT IMAGE
+    ========================================================= */
 
     function nextImage() {
 
@@ -277,6 +301,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       PREVIOUS IMAGE
+    ========================================================= */
+
     function previousImage() {
 
         const project =
@@ -301,6 +329,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =========================================================
+       IMAGE CLICK
+    ========================================================= */
 
     if (container) {
 
@@ -335,6 +367,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       MODAL BUTTONS
+    ========================================================= */
+
     if (closeBtn) {
 
         closeBtn.addEventListener(
@@ -365,6 +401,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       CLOSE OUTSIDE MODAL
+    ========================================================= */
+
     if (modal) {
 
         modal.addEventListener(
@@ -384,6 +424,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =========================================================
+       KEYBOARD CONTROLS
+    ========================================================= */
 
     document.addEventListener(
         "keydown",
@@ -424,6 +468,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
+
+    /* =========================================================
+       LANGUAGE
+    ========================================================= */
 
     if (langBtn) {
 
@@ -488,6 +536,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =========================================================
+       INITIAL LOAD
+    ========================================================= */
 
     document.documentElement.lang =
         currentLang;

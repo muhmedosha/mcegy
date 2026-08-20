@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Educational Project",
 
             images: [
-                "assets/projects/educational/faculty-pharmacy/1.jpg",
-                "assets/projects/educational/faculty-pharmacy/2.jpg",
-                "assets/projects/educational/faculty-pharmacy/3.jpg"
+                "assets2/projects/educational/faculty-pharmacy/1.jpg",
+                "assets2/projects/educational/faculty-pharmacy/2.jpg",
+                "assets2/projects/educational/faculty-pharmacy/3.jpg"
             ]
         },
 
@@ -36,13 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Educational Project",
 
             images: [
-                "assets/projects/educational/msa-university/1.jpg",
-                "assets/projects/educational/msa-university/2.jpg",
-                "assets/projects/educational/msa-university/3.jpg"
+                "assets2/projects/educational/msa-university/1.jpg",
+                "assets2/projects/educational/msa-university/2.jpg",
+                "assets2/projects/educational/msa-university/3.jpg"
             ]
         }
 
     ];
+
 
     const container =
         document.getElementById("projectsContainer");
@@ -65,15 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn =
         document.querySelector(".modal-prev");
 
+
     let activeProject = 0;
     let activeImage = 0;
 
+
+    /* =========================================================
+       RENDER PROJECTS
+    ========================================================= */
 
     function renderProjects() {
 
         if (!container) return;
 
         container.innerHTML = "";
+
 
         projects.forEach((project, index) => {
 
@@ -82,20 +89,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     ? project.titleAr
                     : project.titleEn;
 
+
             const type =
                 currentLang === "ar"
                     ? project.typeAr
                     : project.typeEn;
+
 
             const imageCount =
                 currentLang === "ar"
                     ? `${project.images.length} صور`
                     : `${project.images.length} Images`;
 
+
             const card =
                 document.createElement("article");
 
-            card.className = "project-card";
+
+            card.className =
+                "project-card";
+
 
             card.innerHTML = `
 
@@ -112,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </h3>
 
                     </div>
+
 
                     <div class="project-year">
                         ${project.year}
@@ -134,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 src="${image}"
                                 alt="${title}"
                                 loading="lazy"
+                                decoding="async"
                             >
 
                         </div>
@@ -157,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `;
 
+
             container.appendChild(card);
 
         });
@@ -164,36 +180,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================================
+       OPEN MODAL
+    ========================================================= */
+
     function openModal(projectIndex, imageIndex) {
 
         activeProject = projectIndex;
+
         activeImage = imageIndex;
 
         updateModal();
 
+
         if (!modal) return;
+
 
         modal.classList.add("active");
 
-        modal.setAttribute("aria-hidden", "false");
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
 
         document.body.style.overflow = "hidden";
+
     }
 
 
+    /* =========================================================
+       UPDATE MODAL
+    ========================================================= */
+
     function updateModal() {
 
-        const project = projects[activeProject];
+        const project =
+            projects[activeProject];
+
 
         if (!project || !modalImage) return;
 
+
         modalImage.src =
             project.images[activeImage];
+
 
         modalImage.alt =
             currentLang === "ar"
                 ? project.titleAr
                 : project.titleEn;
+
 
         if (modalCaption) {
 
@@ -205,195 +242,322 @@ document.addEventListener("DOMContentLoaded", () => {
                 )
                 + " - "
                 + project.year;
+
         }
 
     }
 
+
+    /* =========================================================
+       CLOSE MODAL
+    ========================================================= */
 
     function closeModal() {
 
         if (!modal) return;
 
+
         modal.classList.remove("active");
 
-        modal.setAttribute("aria-hidden", "true");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
 
         if (modalImage) {
+
             modalImage.src = "";
+
         }
 
+
         document.body.style.overflow = "";
+
     }
 
+
+    /* =========================================================
+       NEXT IMAGE
+    ========================================================= */
 
     function nextImage() {
 
-        const project = projects[activeProject];
+        const project =
+            projects[activeProject];
+
 
         if (!project) return;
+
 
         activeImage++;
 
-        if (activeImage >= project.images.length) {
+
+        if (
+            activeImage >=
+            project.images.length
+        ) {
+
             activeImage = 0;
+
         }
 
+
         updateModal();
+
     }
 
+
+    /* =========================================================
+       PREVIOUS IMAGE
+    ========================================================= */
 
     function previousImage() {
 
-        const project = projects[activeProject];
+        const project =
+            projects[activeProject];
+
 
         if (!project) return;
 
+
         activeImage--;
 
+
         if (activeImage < 0) {
-            activeImage = project.images.length - 1;
+
+            activeImage =
+                project.images.length - 1;
+
         }
 
+
         updateModal();
+
     }
 
+
+    /* =========================================================
+       IMAGE CLICK
+    ========================================================= */
 
     if (container) {
 
-        container.addEventListener("click", (event) => {
+        container.addEventListener(
+            "click",
+            (event) => {
 
-            const image =
-                event.target.closest(".project-image");
+                const image =
+                    event.target.closest(
+                        ".project-image"
+                    );
 
-            if (!image) return;
 
-            openModal(
-                Number(image.dataset.project),
-                Number(image.dataset.image)
-            );
+                if (!image) return;
 
-        });
+
+                openModal(
+
+                    Number(
+                        image.dataset.project
+                    ),
+
+                    Number(
+                        image.dataset.image
+                    )
+
+                );
+
+            }
+        );
 
     }
 
 
+    /* =========================================================
+       MODAL BUTTONS
+    ========================================================= */
+
     if (closeBtn) {
+
         closeBtn.addEventListener(
             "click",
             closeModal
         );
+
     }
 
 
     if (nextBtn) {
+
         nextBtn.addEventListener(
             "click",
             nextImage
         );
+
     }
 
 
     if (prevBtn) {
+
         prevBtn.addEventListener(
             "click",
             previousImage
         );
+
     }
 
+
+    /* =========================================================
+       CLOSE OUTSIDE MODAL
+    ========================================================= */
 
     if (modal) {
 
-        modal.addEventListener("click", (event) => {
+        modal.addEventListener(
+            "click",
+            (event) => {
 
-            if (event.target === modal) {
-                closeModal();
+                if (
+                    event.target === modal
+                ) {
+
+                    closeModal();
+
+                }
+
             }
-
-        });
+        );
 
     }
 
 
-    document.addEventListener("keydown", (event) => {
+    /* =========================================================
+       KEYBOARD CONTROLS
+    ========================================================= */
 
-        if (
-            !modal ||
-            !modal.classList.contains("active")
-        ) {
-            return;
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                !modal ||
+                !modal.classList.contains(
+                    "active"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            if (event.key === "Escape") {
+
+                closeModal();
+
+            }
+
+
+            if (event.key === "ArrowRight") {
+
+                nextImage();
+
+            }
+
+
+            if (event.key === "ArrowLeft") {
+
+                previousImage();
+
+            }
+
         }
+    );
 
-        if (event.key === "Escape") {
-            closeModal();
-        }
 
-        if (event.key === "ArrowRight") {
-            nextImage();
-        }
-
-        if (event.key === "ArrowLeft") {
-            previousImage();
-        }
-
-    });
-
+    /* =========================================================
+       LANGUAGE
+    ========================================================= */
 
     if (langBtn) {
 
-        langBtn.addEventListener("click", () => {
+        langBtn.addEventListener(
+            "click",
+            () => {
 
-            currentLang =
-                currentLang === "ar"
-                    ? "en"
-                    : "ar";
-
-            document.documentElement.lang =
-                currentLang;
-
-            document.documentElement.dir =
-                currentLang === "ar"
-                    ? "rtl"
-                    : "ltr";
-
-            langBtn.textContent =
-                currentLang === "ar"
-                    ? "EN"
-                    : "AR";
+                currentLang =
+                    currentLang === "ar"
+                        ? "en"
+                        : "ar";
 
 
-            document
-                .querySelectorAll("[data-ar][data-en]")
-                .forEach((element) => {
-
-                    element.textContent =
-                        currentLang === "ar"
-                            ? element.dataset.ar
-                            : element.dataset.en;
-
-                });
+                document.documentElement.lang =
+                    currentLang;
 
 
-            renderProjects();
+                document.documentElement.dir =
+                    currentLang === "ar"
+                        ? "rtl"
+                        : "ltr";
 
 
-            if (
-                modal &&
-                modal.classList.contains("active")
-            ) {
-                updateModal();
+                langBtn.textContent =
+                    currentLang === "ar"
+                        ? "EN"
+                        : "AR";
+
+
+                document
+                    .querySelectorAll(
+                        "[data-ar][data-en]"
+                    )
+                    .forEach(
+                        (element) => {
+
+                            element.textContent =
+                                currentLang === "ar"
+                                    ? element.dataset.ar
+                                    : element.dataset.en;
+
+                        }
+                    );
+
+
+                renderProjects();
+
+
+                if (
+                    modal &&
+                    modal.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    updateModal();
+
+                }
+
             }
-
-        });
+        );
 
     }
 
 
-    document.documentElement.lang = currentLang;
+    /* =========================================================
+       INITIAL LOAD
+    ========================================================= */
+
+    document.documentElement.lang =
+        currentLang;
+
 
     document.documentElement.dir =
         currentLang === "ar"
             ? "rtl"
             : "ltr";
+
 
     renderProjects();
 

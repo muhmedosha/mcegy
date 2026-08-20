@@ -1,343 +1,582 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
+    let currentLang = "ar";
 
-let currentLang="ar";
+    const langBtn =
+        document.querySelector(".language-btn");
 
 
-const langBtn=document.querySelector(".language-btn");
+    /* =========================================================
+       PROJECTS DATA
+    ========================================================= */
 
+    const projects = [
 
+        {
+            number: "01",
 
-const projects=[
+            titleAr: "مستشفى مدينتي",
+            titleEn: "Madinaty Hospital",
 
+            year: "2026",
 
-{
+            typeAr: "مشروع صحي",
+            typeEn: "Healthcare Project",
 
-number:"01",
+            images: [
+                "assets2/projects/healthcare/hospitals/1.jpg",
+                "assets2/projects/healthcare/hospitals/2.jpg",
+                "assets2/projects/healthcare/hospitals/3.jpg"
+            ]
+        }
 
+    ];
 
-titleAr:"مستشفى مدينتي",
 
-titleEn:"Madinaty Hospital",
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
 
+    const container =
+        document.getElementById("projectsContainer");
 
-year:"2026",
+    const modal =
+        document.getElementById("imageModal");
 
+    const modalImage =
+        document.getElementById("modalImage");
 
-typeAr:"مشروع صحي",
+    const modalCaption =
+        document.getElementById("modalCaption");
 
-typeEn:"Healthcare Project",
+    const closeBtn =
+        document.querySelector(".modal-close");
 
+    const nextBtn =
+        document.querySelector(".modal-next");
 
-images:[
+    const prevBtn =
+        document.querySelector(".modal-prev");
 
-"assets/projects/healthcare/hospitals/1.jpg",
 
-"assets/projects/healthcare/hospitals/2.jpg",
+    let activeProject = 0;
+    let activeImage = 0;
 
-"assets/projects/healthcare/hospitals/3.jpg"
 
-]
+    /* =========================================================
+       RENDER PROJECTS
+    ========================================================= */
 
+    function renderProjects() {
 
-}
+        if (!container) return;
 
+        container.innerHTML = "";
 
-];
 
+        projects.forEach((project, index) => {
 
+            const title =
+                currentLang === "ar"
+                    ? project.titleAr
+                    : project.titleEn;
 
-const container=document.getElementById("projectsContainer");
 
+            const type =
+                currentLang === "ar"
+                    ? project.typeAr
+                    : project.typeEn;
 
-const modal=document.getElementById("imageModal");
 
+            const imageCount =
+                currentLang === "ar"
+                    ? `${project.images.length} صور`
+                    : `${project.images.length} Images`;
 
-const modalImage=document.getElementById("modalImage");
 
+            const card =
+                document.createElement("article");
 
-const modalCaption=document.getElementById("modalCaption");
 
+            card.className =
+                "project-card";
 
-const closeBtn=document.querySelector(".modal-close");
 
+            card.innerHTML = `
 
-const nextBtn=document.querySelector(".modal-next");
+                <div class="project-header">
 
+                    <div>
 
-const prevBtn=document.querySelector(".modal-prev");
+                        <div class="project-number">
+                            ${project.number}
+                        </div>
 
+                        <h3 class="project-title">
+                            ${title}
+                        </h3>
 
+                    </div>
 
-let activeProject=0;
 
-let activeImage=0;
+                    <div class="project-year">
+                        ${project.year}
+                    </div>
 
+                </div>
 
 
-function renderProjects(){
+                <div class="project-gallery">
 
+                    ${project.images.map((image, imageIndex) => `
 
-container.innerHTML="";
+                        <div
+                            class="project-image"
+                            data-project="${index}"
+                            data-image="${imageIndex}"
+                        >
 
+                            <img
+                                src="${image}"
+                                alt="${title}"
+                                loading="lazy"
+                                decoding="async"
+                            >
 
-projects.forEach((project,index)=>{
+                        </div>
 
+                    `).join("")}
 
-let title=currentLang==="ar"
-?project.titleAr
-:project.titleEn;
+                </div>
 
 
-let type=currentLang==="ar"
-?project.typeAr
-:project.typeEn;
+                <div class="project-footer">
 
+                    <span>
+                        ${type}
+                    </span>
 
+                    <span>
+                        ${imageCount}
+                    </span>
 
-let card=document.createElement("article");
+                </div>
 
+            `;
 
-card.className="project-card";
 
+            container.appendChild(card);
 
+        });
 
-card.innerHTML=`
+    }
 
-<div class="project-header">
 
-<div>
+    /* =========================================================
+       OPEN MODAL
+    ========================================================= */
 
-<div class="project-number">
-${project.number}
-</div>
+    function openModal(
+        projectIndex,
+        imageIndex
+    ) {
 
+        activeProject = projectIndex;
 
-<h3 class="project-title">
-${title}
-</h3>
+        activeImage = imageIndex;
 
 
-</div>
+        updateModal();
 
 
-<div class="project-year">
-${project.year}
-</div>
+        if (!modal) return;
 
 
-</div>
+        modal.classList.add("active");
 
 
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
 
-<div class="project-gallery">
 
+        document.body.style.overflow =
+            "hidden";
 
-${project.images.map((img,i)=>`
+    }
 
-<div
-class="project-image"
-data-project="${index}"
-data-image="${i}">
 
+    /* =========================================================
+       UPDATE MODAL
+    ========================================================= */
 
-<img src="${img}">
+    function updateModal() {
 
+        const project =
+            projects[activeProject];
 
-</div>
 
+        if (
+            !project ||
+            !modalImage
+        ) {
+            return;
+        }
 
-`).join("")}
 
+        modalImage.src =
+            project.images[activeImage];
 
-</div>
 
+        modalImage.alt =
+            currentLang === "ar"
+                ? project.titleAr
+                : project.titleEn;
 
 
-<div class="project-footer">
+        if (modalCaption) {
 
+            modalCaption.textContent =
 
-<span>
-${type}
-</span>
+                (
+                    currentLang === "ar"
+                        ? project.titleAr
+                        : project.titleEn
+                )
 
+                + " - "
 
-<span>
-${project.images.length} صور
-</span>
+                + project.year;
 
+        }
 
-</div>
+    }
 
 
-`;
+    /* =========================================================
+       CLOSE MODAL
+    ========================================================= */
 
+    function closeModal() {
 
-container.appendChild(card);
+        if (!modal) return;
 
 
-});
+        modal.classList.remove(
+            "active"
+        );
 
 
-}
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
 
 
+        if (modalImage) {
 
+            modalImage.src = "";
 
-function updateModal(){
+        }
 
 
-let project=projects[activeProject];
+        document.body.style.overflow =
+            "";
 
+    }
 
-modalImage.src=
-project.images[activeImage];
 
+    /* =========================================================
+       NEXT IMAGE
+    ========================================================= */
 
-modalCaption.textContent=
-(project.titleAr)
-+" - "
-+project.year;
+    function nextImage() {
 
+        const project =
+            projects[activeProject];
 
-}
 
+        if (!project) return;
 
 
-function openModal(p,i){
+        activeImage++;
 
 
-activeProject=p;
+        if (
+            activeImage >=
+            project.images.length
+        ) {
 
-activeImage=i;
+            activeImage = 0;
 
+        }
 
-updateModal();
 
+        updateModal();
 
-modal.classList.add("active");
+    }
 
 
-}
+    /* =========================================================
+       PREVIOUS IMAGE
+    ========================================================= */
 
+    function previousImage() {
 
+        const project =
+            projects[activeProject];
 
-function closeModal(){
 
-modal.classList.remove("active");
+        if (!project) return;
 
-}
 
+        activeImage--;
 
 
-container.addEventListener("click",(e)=>{
+        if (activeImage < 0) {
 
+            activeImage =
+                project.images.length - 1;
 
-let image=e.target.closest(".project-image");
+        }
 
 
-if(!image)return;
+        updateModal();
 
+    }
 
-openModal(
 
-Number(image.dataset.project),
+    /* =========================================================
+       IMAGE CLICK
+    ========================================================= */
 
-Number(image.dataset.image)
+    if (container) {
 
-);
+        container.addEventListener(
+            "click",
+            (event) => {
 
+                const image =
+                    event.target.closest(
+                        ".project-image"
+                    );
 
-});
 
+                if (!image) return;
 
 
-nextBtn.onclick=()=>{
+                const projectIndex =
+                    Number(
+                        image.dataset.project
+                    );
 
 
-let project=projects[activeProject];
+                const imageIndex =
+                    Number(
+                        image.dataset.image
+                    );
 
 
-activeImage++;
+                openModal(
+                    projectIndex,
+                    imageIndex
+                );
 
+            }
+        );
 
-if(activeImage>=project.images.length)
-activeImage=0;
+    }
 
 
-updateModal();
+    /* =========================================================
+       MODAL BUTTONS
+    ========================================================= */
 
+    if (closeBtn) {
 
-};
+        closeBtn.addEventListener(
+            "click",
+            closeModal
+        );
 
+    }
 
 
-prevBtn.onclick=()=>{
+    if (nextBtn) {
 
+        nextBtn.addEventListener(
+            "click",
+            nextImage
+        );
 
-let project=projects[activeProject];
+    }
 
 
-activeImage--;
+    if (prevBtn) {
 
+        prevBtn.addEventListener(
+            "click",
+            previousImage
+        );
 
-if(activeImage<0)
-activeImage=project.images.length-1;
+    }
 
 
-updateModal();
+    /* =========================================================
+       CLOSE OUTSIDE MODAL
+    ========================================================= */
 
+    if (modal) {
 
-};
+        modal.addEventListener(
+            "click",
+            (event) => {
 
+                if (
+                    event.target === modal
+                ) {
 
+                    closeModal();
 
-closeBtn.onclick=closeModal;
+                }
 
+            }
+        );
 
+    }
 
-langBtn.onclick=()=>{
 
+    /* =========================================================
+       KEYBOARD CONTROLS
+    ========================================================= */
 
-currentLang=currentLang==="ar"
-?"en"
-:"ar";
+    document.addEventListener(
+        "keydown",
+        (event) => {
 
+            if (
+                !modal ||
+                !modal.classList.contains(
+                    "active"
+                )
+            ) {
+                return;
+            }
 
-document.documentElement.dir=
-currentLang==="ar"
-?"rtl"
-:"ltr";
 
+            if (
+                event.key === "Escape"
+            ) {
 
-langBtn.textContent=
-currentLang==="ar"
-?"EN"
-:"AR";
+                closeModal();
 
+            }
 
 
-document.querySelectorAll("[data-ar][data-en]")
-.forEach(el=>{
+            if (
+                event.key === "ArrowRight"
+            ) {
 
+                nextImage();
 
-el.textContent=
-currentLang==="ar"
-?el.dataset.ar
-:el.dataset.en;
+            }
 
 
-});
+            if (
+                event.key === "ArrowLeft"
+            ) {
 
+                previousImage();
 
-renderProjects();
+            }
 
+        }
+    );
 
-};
 
+    /* =========================================================
+       LANGUAGE
+    ========================================================= */
 
+    if (langBtn) {
 
-renderProjects();
+        langBtn.addEventListener(
+            "click",
+            () => {
 
+                currentLang =
+                    currentLang === "ar"
+                        ? "en"
+                        : "ar";
+
+
+                document.documentElement.lang =
+                    currentLang;
+
+
+                document.documentElement.dir =
+                    currentLang === "ar"
+                        ? "rtl"
+                        : "ltr";
+
+
+                langBtn.textContent =
+                    currentLang === "ar"
+                        ? "EN"
+                        : "AR";
+
+
+                document
+                    .querySelectorAll(
+                        "[data-ar][data-en]"
+                    )
+                    .forEach(
+                        (element) => {
+
+                            element.textContent =
+                                currentLang === "ar"
+                                    ? element.dataset.ar
+                                    : element.dataset.en;
+
+                        }
+                    );
+
+
+                renderProjects();
+
+
+                if (
+                    modal &&
+                    modal.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    updateModal();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       INITIAL LOAD
+    ========================================================= */
+
+    document.documentElement.lang =
+        currentLang;
+
+
+    document.documentElement.dir =
+        currentLang === "ar"
+            ? "rtl"
+            : "ltr";
+
+
+    renderProjects();
 
 });

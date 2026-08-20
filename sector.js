@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/central-bank-minia/1.jpg",
-                "assets/projects/government/central-bank-minia/2.jpg",
-                "assets/projects/government/central-bank-minia/3.jpg"
+                "assets2/projects/government/central-bank-minia/1.jpg",
+                "assets2/projects/government/central-bank-minia/2.jpg",
+                "assets2/projects/government/central-bank-minia/3.jpg"
             ]
         },
 
@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/railway-stations/1.jpg",
-                "assets/projects/government/railway-stations/2.jpg",
-                "assets/projects/government/railway-stations/3.jpg"
+                "assets2/projects/government/railway-stations/1.jpg",
+                "assets2/projects/government/railway-stations/2.jpg",
+                "assets2/projects/government/railway-stations/3.jpg"
             ]
         },
 
@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/ministry-transportation/1.jpg",
-                "assets/projects/government/ministry-transportation/2.jpg",
-                "assets/projects/government/ministry-transportation/3.jpg"
+                "assets2/projects/government/ministry-transportation/1.jpg",
+                "assets2/projects/government/ministry-transportation/2.jpg",
+                "assets2/projects/government/ministry-transportation/3.jpg"
             ]
         },
 
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/ministers-landscape/1.jpg",
-                "assets/projects/government/ministers-landscape/2.jpg",
-                "assets/projects/government/ministers-landscape/3.jpg"
+                "assets2/projects/government/ministers-landscape/1.jpg",
+                "assets2/projects/government/ministers-landscape/2.jpg",
+                "assets2/projects/government/ministers-landscape/3.jpg"
             ]
         },
 
@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/ministry-health/1.jpg",
-                "assets/projects/government/ministry-health/2.jpg"
+                "assets2/projects/government/ministry-health/1.jpg",
+                "assets2/projects/government/ministry-health/2.jpg"
             ]
         },
 
@@ -134,9 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/ministry-defense/1.jpg",
-                "assets/projects/government/ministry-defense/2.jpg",
-                "assets/projects/government/ministry-defense/3.jpg"
+                "assets2/projects/government/ministry-defense/1.jpg",
+                "assets2/projects/government/ministry-defense/2.jpg",
+                "assets2/projects/government/ministry-defense/3.jpg"
             ]
         },
 
@@ -155,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/print-house/1.jpg",
-                "assets/projects/government/print-house/2.jpg",
-                "assets/projects/government/print-house/3.jpg"
+                "assets2/projects/government/print-house/1.jpg",
+                "assets2/projects/government/print-house/2.jpg",
+                "assets2/projects/government/print-house/3.jpg"
             ]
         },
 
@@ -176,8 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
             typeEn: "Government Project",
 
             images: [
-                "assets/projects/government/airport-vip/1.jpg",
-                "assets/projects/government/airport-vip/2.jpg"
+                "assets2/projects/government/airport-vip/1.jpg",
+                "assets2/projects/government/airport-vip/2.jpg"
             ]
         }
 

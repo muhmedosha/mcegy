@@ -1,322 +1,137 @@
-/* =========================================================
-   MODERN CONSTRUCTION
-   ARABIC / ENGLISH LANGUAGE SYSTEM
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     const langBtn = document.querySelector(".language-btn");
 
     let currentLang = "ar";
 
 
-    /* =====================================================
-       TRANSLATIONS
-    ===================================================== */
-
     const translations = {
 
-        /* =================================================
-           ARABIC
-        ================================================= */
-
         ar: {
+            navHome: "الرئيسية",
+            navAbout: "من نحن",
+            navProjects: "المشاريع",
+            navSectors: "القطاعات",
+            navContact: "تواصل معنا",
 
-            /* NAVBAR */
+            heroSmall: "Our Tile, Your Style.",
+            heroDescription: "أعمال الرخام والجرانيت بأعلى معايير الجودة والدقة",
 
-            home: "الرئيسية",
+            viewProjects: "استعرض مشاريعنا",
+            contactUs: "تواصل معنا",
 
-            about: "من نحن",
+            founded: "تأسست منذ",
+            portfolioProjects: "مشروع في Portfolio",
+            sectorsCount: "قطاعات مختلفة",
 
-            projects: "المشاريع",
-
-            sectors: "القطاعات",
-
-            contact: "تواصل معنا",
-
-
-            /* HERO */
-
-            slogan: "Our Tile, Your Style.",
-
-            heroDescription:
-                "أعمال الرخام والجرانيت بأعلى معايير الجودة والدقة",
-
-            viewProjects:
-                "استعرض مشاريعنا",
-
-            contactUs:
-                "تواصل معنا",
-
-
-            /* STATS */
-
-            founded:
-                "تأسست منذ",
-
-            portfolioProjects:
-                "مشروع في Portfolio",
-
-            differentSectors:
-                "قطاعات مختلفة",
-
-
-            /* ABOUT */
-
-            aboutLabel:
-                "من نحن",
-
-            aboutTitle:
-                "خبرة في تنفيذ أعمال",
-
-            marbleGranite:
-                "الرخام والجرانيت",
-
+            aboutLabel: "من نحن",
+            aboutTitle1: "خبرة في تنفيذ أعمال",
+            aboutTitle2: "الرخام والجرانيت",
             aboutText:
                 "تأسست Modern Construction في عام 2019، وتقدم خدمات متخصصة في مجال أعمال الرخام والجرانيت وتنفيذ المشروعات بمختلف القطاعات.",
 
+            sectorsLabel: "مجالات عملنا",
+            sectorsTitle: "القطاعات التي نخدمها",
 
-            /* SECTORS */
+            government: "المشروعات الحكومية",
+            administrative: "المباني الإدارية والبنوك",
+            residential: "المشروعات السكنية",
+            educational: "المشروعات التعليمية",
+            commercial: "المشروعات التجارية",
+            healthcare: "المستشفيات والمنشآت الصحية",
+            hospitality: "الفنادق والقرى السياحية",
 
-            sectorsLabel:
-                "مجالات عملنا",
+            portfolioLabel: "Portfolio",
+            featuredProjects: "مشاريعنا المميزة",
 
-            sectorsTitle:
-                "القطاعات التي نخدمها",
+            centralBank: "البنك المركزي - المنيا",
+            governmentProject: "مشروع حكومي",
 
-            government:
-                "المشروعات الحكومية",
+            quesna: "شركة قويسنا",
+            administrativeProject: "مشروع إداري",
 
-            administrative:
-                "المباني الإدارية والبنوك",
+            zed: "أبراج زد B",
+            residentialProject: "مشروع سكني",
 
-            residential:
-                "المشروعات السكنية",
+            fullPortfolio: "عرض جميع المشاريع",
 
-            educational:
-                "المشروعات التعليمية",
-
-            commercial:
-                "المشروعات التجارية",
-
-            healthcare:
-                "المستشفيات والمنشآت الصحية",
-
-            hospitality:
-                "الفنادق والقرى السياحية",
-
-
-            /* PROJECTS */
-
-            portfolio:
-                "Portfolio",
-
-            latestProjects:
-                "مشاريعنا المميزة",
-
-            centralBank:
-                "البنك المركزي - المنيا",
-
-            governmentProject:
-                "مشروع حكومي",
-
-            quesna:
-                "Quesna Company",
-
-            administrativeProject:
-                "مشروع إداري",
-
-            zed:
-                "Zed Towers B",
-
-            residentialProject:
-                "مشروع سكني",
-
-            fullPortfolio:
-                "عرض الـPortfolio كامل",
-
-
-            /* CONTACT */
-
-            contactLabel:
-                "تواصل معنا",
-
-            haveProject:
-                "هل لديك مشروع؟",
-
+            contactLabel: "تواصل معنا",
+            haveProject: "هل لديك مشروع؟",
             contactText:
                 "تواصل معنا لمعرفة المزيد عن أعمالنا ومشاريعنا.",
 
-
-            /* FOOTER */
-
-            rights:
-                "© Modern Construction. All Rights Reserved."
-
+            footer:
+                "© Modern Construction. جميع الحقوق محفوظة."
         },
 
 
-        /* =================================================
-           ENGLISH
-        ================================================= */
-
         en: {
+            navHome: "Home",
+            navAbout: "About Us",
+            navProjects: "Projects",
+            navSectors: "Sectors",
+            navContact: "Contact Us",
 
-            /* NAVBAR */
-
-            home:
-                "Home",
-
-            about:
-                "About Us",
-
-            projects:
-                "Projects",
-
-            sectors:
-                "Sectors",
-
-            contact:
-                "Contact Us",
-
-
-            /* HERO */
-
-            slogan:
-                "Our Tile, Your Style.",
-
+            heroSmall: "Our Tile, Your Style.",
             heroDescription:
-                "Marble and granite works with the highest standards of quality and precision",
+                "Marble and granite works with the highest standards of quality and precision.",
 
-            viewProjects:
-                "View Our Projects",
+            viewProjects: "View Our Projects",
+            contactUs: "Contact Us",
 
-            contactUs:
-                "Contact Us",
+            founded: "Established Since",
+            portfolioProjects: "Projects in Portfolio",
+            sectorsCount: "Different Sectors",
 
-
-            /* STATS */
-
-            founded:
-                "Founded in",
-
-            portfolioProjects:
-                "Projects in Portfolio",
-
-            differentSectors:
-                "Different Sectors",
-
-
-            /* ABOUT */
-
-            aboutLabel:
-                "About Us",
-
-            aboutTitle:
-                "Experience in",
-
-            marbleGranite:
-                "Marble & Granite Works",
-
+            aboutLabel: "ABOUT US",
+            aboutTitle1: "Expertise in",
+            aboutTitle2: "Marble and Granite Works",
             aboutText:
-                "Founded in 2019, Modern Construction provides specialized marble and granite services and executes projects across different sectors.",
+                "Modern Construction was established in 2019, providing specialized marble and granite services and executing projects across various sectors.",
 
+            sectorsLabel: "OUR SECTORS",
+            sectorsTitle: "The Sectors We Serve",
 
-            /* SECTORS */
+            government: "Government Projects",
+            administrative: "Administrative Buildings & Banks",
+            residential: "Residential Projects",
+            educational: "Educational Projects",
+            commercial: "Commercial Projects",
+            healthcare: "Hospitals & Healthcare Facilities",
+            hospitality: "Hotels & Resorts",
 
-            sectorsLabel:
-                "Our Fields",
+            portfolioLabel: "Portfolio",
+            featuredProjects: "Featured Projects",
 
-            sectorsTitle:
-                "Sectors We Serve",
+            centralBank: "Central Bank - Minia",
+            governmentProject: "Government Project",
 
-            government:
-                "Government Projects",
+            quesna: "Quesna Company",
+            administrativeProject: "Administrative Project",
 
-            administrative:
-                "Administrative Buildings & Banks",
+            zed: "Zed Towers B",
+            residentialProject: "Residential Project",
 
-            residential:
-                "Residential Projects",
+            fullPortfolio: "View Full Portfolio",
 
-            educational:
-                "Educational Projects",
-
-            commercial:
-                "Commercial Projects",
-
-            healthcare:
-                "Hospitals & Healthcare Facilities",
-
-            hospitality:
-                "Hotels & Resorts",
-
-
-            /* PROJECTS */
-
-            portfolio:
-                "PORTFOLIO",
-
-            latestProjects:
-                "Featured Projects",
-
-            centralBank:
-                "Central Bank - Minia",
-
-            governmentProject:
-                "Government Project",
-
-            quesna:
-                "Quesna Company",
-
-            administrativeProject:
-                "Administrative Project",
-
-            zed:
-                "Zed Towers B",
-
-            residentialProject:
-                "Residential Project",
-
-            fullPortfolio:
-                "View Full Portfolio",
-
-
-            /* CONTACT */
-
-            contactLabel:
-                "Contact Us",
-
-            haveProject:
-                "Have a Project?",
-
+            contactLabel: "CONTACT US",
+            haveProject: "Have a Project?",
             contactText:
                 "Contact us to learn more about our work and projects.",
 
-
-            /* FOOTER */
-
-            rights:
+            footer:
                 "© Modern Construction. All Rights Reserved."
-
         }
 
     };
 
 
-    /* =====================================================
-       CHANGE LANGUAGE
-    ===================================================== */
+    function updateLanguage() {
 
-    function changeLanguage() {
-
-        const lang = translations[currentLang];
+        const t = translations[currentLang];
 
 
-        /* HTML LANGUAGE */
-
-        document.documentElement.lang =
-            currentLang;
+        document.documentElement.lang = currentLang;
 
         document.documentElement.dir =
             currentLang === "ar"
@@ -324,34 +139,269 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "ltr";
 
 
-        /* =================================================
-           NAVBAR
-        ================================================= */
+        /* NAV */
 
-        const navLinks =
-            document.querySelectorAll("nav a");
+        const nav = document.querySelectorAll(".navbar nav a");
 
-        if (navLinks.length >= 5) {
+        if (nav.length >= 5) {
 
-            navLinks[0].textContent =
-                lang.home;
-
-            navLinks[1].textContent =
-                lang.about;
-
-            navLinks[2].textContent =
-                lang.projects;
-
-            navLinks[3].textContent =
-                lang.sectors;
-
-            navLinks[4].textContent =
-                lang.contact;
+            nav[0].textContent = t.navHome;
+            nav[1].textContent = t.navAbout;
+            nav[2].textContent = t.navProjects;
+            nav[3].textContent = t.navSectors;
+            nav[4].textContent = t.navContact;
 
         }
 
 
-        /* LANGUAGE BUTTON */
+        /* HERO */
+
+        const smallTitle =
+            document.querySelector(".small-title");
+
+        if (smallTitle)
+            smallTitle.textContent = t.heroSmall;
+
+
+        const heroDescription =
+            document.querySelector(".hero-description");
+
+        if (heroDescription)
+            heroDescription.textContent =
+                t.heroDescription;
+
+
+        const heroButtons =
+            document.querySelectorAll(".hero-buttons .btn");
+
+        if (heroButtons.length >= 2) {
+
+            heroButtons[0].textContent =
+                t.viewProjects;
+
+            heroButtons[1].textContent =
+                t.contactUs;
+
+        }
+
+
+        /* STATS */
+
+        const stats =
+            document.querySelectorAll(".stats .stat p");
+
+        if (stats.length >= 3) {
+
+            stats[0].textContent = t.founded;
+            stats[1].textContent = t.portfolioProjects;
+            stats[2].textContent = t.sectorsCount;
+
+        }
+
+
+        /* ABOUT */
+
+        const aboutLabel =
+            document.querySelector(".about .section-label");
+
+        if (aboutLabel)
+            aboutLabel.textContent = t.aboutLabel;
+
+
+        const aboutTitle =
+            document.querySelector(".about h2");
+
+        if (aboutTitle) {
+
+            const spans =
+                aboutTitle.querySelectorAll("span");
+
+            if (spans.length >= 2) {
+
+                spans[0].textContent =
+                    t.aboutTitle1;
+
+                spans[1].textContent =
+                    t.aboutTitle2;
+
+            }
+
+        }
+
+
+        const aboutText =
+            document.querySelector(".about .container > p:last-child");
+
+        if (aboutText)
+            aboutText.textContent =
+                t.aboutText;
+
+
+        /* SECTORS */
+
+        const sectorLabel =
+            document.querySelector(".sectors .section-label");
+
+        if (sectorLabel)
+            sectorLabel.textContent =
+                t.sectorsLabel;
+
+
+        const sectorTitle =
+            document.querySelector(".sectors h2");
+
+        if (sectorTitle)
+            sectorTitle.textContent =
+                t.sectorsTitle;
+
+
+        const sectorTitles =
+            document.querySelectorAll(".sector-card h3");
+
+        if (sectorTitles.length >= 7) {
+
+            sectorTitles[0].textContent =
+                t.government;
+
+            sectorTitles[1].textContent =
+                t.administrative;
+
+            sectorTitles[2].textContent =
+                t.residential;
+
+            sectorTitles[3].textContent =
+                t.educational;
+
+            sectorTitles[4].textContent =
+                t.commercial;
+
+            sectorTitles[5].textContent =
+                t.healthcare;
+
+            sectorTitles[6].textContent =
+                t.hospitality;
+
+        }
+
+
+        /* PROJECTS */
+
+        const projectsLabel =
+            document.querySelector(".projects .section-label");
+
+        if (projectsLabel)
+            projectsLabel.textContent =
+                t.portfolioLabel;
+
+
+        const projectsTitle =
+            document.querySelector(".projects h2");
+
+        if (projectsTitle)
+            projectsTitle.textContent =
+                t.featuredProjects;
+
+
+        const projectCards =
+            document.querySelectorAll(
+                ".projects-grid .project-card"
+            );
+
+
+        if (projectCards.length >= 3) {
+
+            /* Project 1 */
+
+            projectCards[0]
+                .querySelector("h3")
+                .textContent =
+                t.centralBank;
+
+            projectCards[0]
+                .querySelector("p")
+                .textContent =
+                t.governmentProject;
+
+
+            /* Project 2 */
+
+            projectCards[1]
+                .querySelector("h3")
+                .textContent =
+                t.quesna;
+
+            projectCards[1]
+                .querySelector("p")
+                .textContent =
+                t.administrativeProject;
+
+
+            /* Project 3 */
+
+            projectCards[2]
+                .querySelector("h3")
+                .textContent =
+                t.zed;
+
+            projectCards[2]
+                .querySelector("p")
+                .textContent =
+                t.residentialProject;
+
+        }
+
+
+        /* PORTFOLIO BUTTON */
+
+        const portfolioButton =
+            document.querySelector(
+                ".portfolio-button .btn"
+            );
+
+        if (portfolioButton)
+            portfolioButton.textContent =
+                t.fullPortfolio;
+
+
+        /* CONTACT */
+
+        const contactLabel =
+            document.querySelector(".contact .section-label");
+
+        if (contactLabel)
+            contactLabel.textContent =
+                t.contactLabel;
+
+
+        const contactTitle =
+            document.querySelector(".contact h2");
+
+        if (contactTitle)
+            contactTitle.textContent =
+                t.haveProject;
+
+
+        const contactText =
+            document.querySelector(
+                ".contact .container > p:not(.section-label)"
+            );
+
+        if (contactText)
+            contactText.textContent =
+                t.contactText;
+
+
+        /* FOOTER */
+
+        const footerText =
+            document.querySelector("footer p");
+
+        if (footerText)
+            footerText.textContent =
+                t.footer;
+
+
+        /* BUTTON */
 
         if (langBtn) {
 
@@ -362,454 +412,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
-        /* =================================================
-           HERO
-        ================================================= */
-
-        const slogan =
-            document.querySelector(".small-title");
-
-        if (slogan) {
-
-            slogan.textContent =
-                lang.slogan;
-
-        }
-
-
-        const heroDescription =
-            document.querySelector(".hero-description");
-
-        if (heroDescription) {
-
-            heroDescription.textContent =
-                lang.heroDescription;
-
-        }
-
-
-        const heroButtons =
-            document.querySelectorAll(
-                ".hero-buttons .btn"
-            );
-
-        if (heroButtons.length >= 2) {
-
-            heroButtons[0].textContent =
-                lang.viewProjects;
-
-            heroButtons[1].textContent =
-                lang.contactUs;
-
-        }
-
-
-        /* =================================================
-           STATS
-        ================================================= */
-
-        const stats =
-            document.querySelectorAll(".stat");
-
-        if (stats.length >= 3) {
-
-            const statTexts = [
-
-                lang.founded,
-
-                lang.portfolioProjects,
-
-                lang.differentSectors
-
-            ];
-
-            stats.forEach((stat, index) => {
-
-                const text =
-                    stat.querySelector("p");
-
-                if (
-                    text &&
-                    statTexts[index]
-                ) {
-
-                    text.textContent =
-                        statTexts[index];
-
-                }
-
-            });
-
-        }
-
-
-        /* =================================================
-           ABOUT
-        ================================================= */
-
-        const about =
-            document.querySelector(".about");
-
-        if (about) {
-
-            const label =
-                about.querySelector(
-                    ".section-label"
-                );
-
-            if (label) {
-
-                label.textContent =
-                    lang.aboutLabel;
-
-            }
-
-
-            const title =
-                about.querySelector("h2");
-
-            if (title) {
-
-                title.innerHTML =
-                    `${lang.aboutTitle}
-                    <span>${lang.marbleGranite}</span>`;
-
-            }
-
-
-            const paragraph =
-                about.querySelector(
-                    "p:last-child"
-                );
-
-            if (paragraph) {
-
-                paragraph.textContent =
-                    lang.aboutText;
-
-            }
-
-        }
-
-
-        /* =================================================
-           SECTORS
-        ================================================= */
-
-        const sectors =
-            document.querySelector(".sectors");
-
-        if (sectors) {
-
-            const label =
-                sectors.querySelector(
-                    ".section-label"
-                );
-
-            if (label) {
-
-                label.textContent =
-                    lang.sectorsLabel;
-
-            }
-
-
-            const title =
-                sectors.querySelector("h2");
-
-            if (title) {
-
-                title.textContent =
-                    lang.sectorsTitle;
-
-            }
-
-
-            const cards =
-                sectors.querySelectorAll(
-                    ".sector-card h3"
-                );
-
-
-            const sectorNames = [
-
-                lang.government,
-
-                lang.administrative,
-
-                lang.residential,
-
-                lang.educational,
-
-                lang.commercial,
-
-                lang.healthcare,
-
-                lang.hospitality
-
-            ];
-
-
-            cards.forEach((card, index) => {
-
-                if (sectorNames[index]) {
-
-                    card.textContent =
-                        sectorNames[index];
-
-                }
-
-            });
-
-        }
-
-
-        /* =================================================
-           PROJECTS
-        ================================================= */
-
-        const projectsSection =
-            document.querySelector(
-                ".projects"
-            );
-
-        if (projectsSection) {
-
-            const label =
-                projectsSection.querySelector(
-                    ".section-label"
-                );
-
-            if (label) {
-
-                label.textContent =
-                    lang.portfolio;
-
-            }
-
-
-            const title =
-                projectsSection.querySelector(
-                    "h2"
-                );
-
-            if (title) {
-
-                title.textContent =
-                    lang.latestProjects;
-
-            }
-
-
-            const projectCards =
-                projectsSection.querySelectorAll(
-                    ".project-card"
-                );
-
-
-            /* PROJECT 1 */
-
-            if (projectCards[0]) {
-
-                const h3 =
-                    projectCards[0]
-                        .querySelector("h3");
-
-                const p =
-                    projectCards[0]
-                        .querySelector("p");
-
-                if (h3) {
-
-                    h3.textContent =
-                        lang.centralBank;
-
-                }
-
-                if (p) {
-
-                    p.textContent =
-                        lang.governmentProject;
-
-                }
-
-            }
-
-
-            /* PROJECT 2 */
-
-            if (projectCards[1]) {
-
-                const h3 =
-                    projectCards[1]
-                        .querySelector("h3");
-
-                const p =
-                    projectCards[1]
-                        .querySelector("p");
-
-                if (h3) {
-
-                    h3.textContent =
-                        lang.quesna;
-
-                }
-
-                if (p) {
-
-                    p.textContent =
-                        lang.administrativeProject;
-
-                }
-
-            }
-
-
-            /* PROJECT 3 */
-
-            if (projectCards[2]) {
-
-                const h3 =
-                    projectCards[2]
-                        .querySelector("h3");
-
-                const p =
-                    projectCards[2]
-                        .querySelector("p");
-
-                if (h3) {
-
-                    h3.textContent =
-                        lang.zed;
-
-                }
-
-                if (p) {
-
-                    p.textContent =
-                        lang.residentialProject;
-
-                }
-
-            }
-
-
-            /* FULL PORTFOLIO */
-
-            const portfolioBtn =
-                projectsSection.querySelector(
-                    'a[href="portfolio.html"]'
-                );
-
-            if (portfolioBtn) {
-
-                portfolioBtn.textContent =
-                    lang.fullPortfolio;
-
-            }
-
-        }
-
-
-        /* =================================================
-           CONTACT
-        ================================================= */
-
-        const contact =
-            document.querySelector(
-                ".contact"
-            );
-
-        if (contact) {
-
-            const label =
-                contact.querySelector(
-                    ".section-label"
-                );
-
-            if (label) {
-
-                label.textContent =
-                    lang.contactLabel;
-
-            }
-
-
-            const title =
-                contact.querySelector(
-                    "h2"
-                );
-
-            if (title) {
-
-                title.textContent =
-                    lang.haveProject;
-
-            }
-
-
-            const paragraph =
-                contact.querySelector(
-                    "p:not(.section-label)"
-                );
-
-            if (paragraph) {
-
-                paragraph.textContent =
-                    lang.contactText;
-
-            }
-
-        }
-
-
-        /* =================================================
-           FOOTER
-        ================================================= */
-
-        const footer =
-            document.querySelector(
-                "footer p"
-            );
-
-        if (footer) {
-
-            footer.textContent =
-                lang.rights;
-
-        }
-
     }
 
 
-    /* =====================================================
-       LANGUAGE BUTTON
-    ===================================================== */
+    /* LANGUAGE BUTTON */
 
     if (langBtn) {
 
-        langBtn.addEventListener(
-            "click",
-            () => {
+        langBtn.addEventListener("click", function () {
 
-                currentLang =
-                    currentLang === "ar"
-                        ? "en"
-                        : "ar";
+            currentLang =
+                currentLang === "ar"
+                    ? "en"
+                    : "ar";
 
-                changeLanguage();
+            updateLanguage();
 
-            }
-        );
+        });
 
     }
 
 
-    /* =====================================================
-       START
-    ===================================================== */
+    /* INITIAL */
 
-    changeLanguage();
+    updateLanguage();
 
 });
